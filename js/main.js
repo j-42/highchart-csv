@@ -127,7 +127,7 @@ Highcharts.chart('container', {
 		        },
 		        labels: {
 		            align: 'center',
-		            x: -3,
+		            x: 10,
 		            y: 16,
 		            format: '{value:.,0f}'
 		        },
@@ -150,8 +150,8 @@ Highcharts.chart('container', {
     },
 
     tooltip: {
-        shared: true,
-        crosshairs: true,
+        shared: false,
+        crosshairs: false,
 
     },
 
@@ -178,6 +178,7 @@ Highcharts.chart('container', {
 						pointStart: 2016,
             point: {
                 events: {
+										/*
                     click: function (e) {
                         hs.htmlExpand(null, {
                             pageOrigin: {
@@ -190,6 +191,7 @@ Highcharts.chart('container', {
                             width: 200
                         });
                     }
+										*/
                 }
             },
             marker: {
