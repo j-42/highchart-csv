@@ -169,7 +169,9 @@ Highcharts.chart('container', {
 					 }
 			 }]
 	 },
-
+	 credits: {
+    	enabled: false
+    },
     plotOptions: { //		General options
         series: { //		General options for all series
 						label:'',
