@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         files: ['index.html'],
       },
       data: {
-          files: ['data/*.csv'],
+          files: ['data/**/*.csv'],
           tasks: ['data'],
       },
       js: {

@@ -10,7 +10,7 @@ Highcharts.setOptions({
 Highcharts.chart('container', {
 
 		title: {
-				text: ''
+				text: 'Nuances Privilège'
 		},
 
 		subtitle: {
@@ -24,7 +24,7 @@ Highcharts.chart('container', {
         },
         type: 'spline',
 				style: {
-						fontSize: "8px",
+						fontSize: "12px",
 						color: (Highcharts.theme && Highcharts.theme.textColor) || "black"
 				}
         // zoomType: 'x',
@@ -37,17 +37,20 @@ Highcharts.chart('container', {
 		// CSV Documentation for Highcharts
 
 		data: {
-        csvURL: window.location + 'data/data.csv',
+        csvURL: window.location + 'data/data-2.csv',
 				itemDelimiter: ',',
         lineDelimiter: '\n',
 				firstRowAsNames: true,
 
+				switchRowsAndColumns:true, // INVERTED CSV -> To trasnpose datas if the first row is the X axis
 
-				 switchRowsAndColumns:true, // INVERTED CSV -> To trasnpose datas if the first row is the X axis
-		//		startRow: 0,
-		//		endRow: 11,
-		//		startColumn: 0,
-		//		endColumn: 10,
+				startRow: 0,
+				endRow: 8, // Select the fist 8 data rows
+
+				startColumn: 0,
+				endColumn: 10, // For 10 years
+				// endColumn: 3, // For 3 years
+
         enablePolling: false,
 				beforeParse: function (csv) {
 						return csv.replace(/\n\n/g, '\n');
@@ -84,7 +87,11 @@ Highcharts.chart('container', {
 
 		xAxis: {
 			title: {
-				 text: ''
+				 text: 'Depuis',
+				 align:'left',
+				 offset: 18,
+					rotation: 0,
+					y: 0
 		 	},
 		 	tickInterval: 1,
       tickWidth: 0,
@@ -92,14 +99,16 @@ Highcharts.chart('container', {
       labels: {
           align: 'center',
           x:0,
-          y: 20
+          y: 30
       }
 	 },
 
 	 yAxis: [
 			 { // left y axis
 	        title: {
-	            text: "Perfs"
+	            text: "Perfs",
+							rotation: 0,
+						 	align: 'high',
 	        },
 	        labels: {
 	            align: 'center',
